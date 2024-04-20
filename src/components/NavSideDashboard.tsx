@@ -6,6 +6,7 @@ import navsideData from '@/utils/navsideData';
 import { usePathname } from 'next/navigation';
 import { useState } from 'react';
 import { signOut, useSession } from 'next-auth/react';
+import { toast } from 'react-toastify';
 
 const NavSideDashboard = () => {
   const [isSidebarOpen, setIsSidebarOpen] = useState<boolean>(false);
@@ -13,7 +14,6 @@ const NavSideDashboard = () => {
   const [isSearchInputOpen, setIsSearchInputOpen] = useState<boolean>(false);
   const pathName = usePathname();
   const { data: session } = useSession();
-  console.log(session);
 
   return (
     <>
@@ -84,6 +84,7 @@ const NavSideDashboard = () => {
                   className={styles.dropdown_link}
                   onClick={() => {
                     signOut({ callbackUrl: '/auth/signin' });
+                    toast.success('Logout success. Redirecting to login page...');
                   }}
                 >
                   <i className={`fi fi-rr-sign-out-alt ${styles.icon}`}></i>

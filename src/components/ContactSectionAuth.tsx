@@ -35,7 +35,7 @@ const ContactSectionAuth = ({
         setCurrentPage('password');
         setTemporaryData((prev: ITemporaryDataStateSignIn) => ({ ...prev, ...values }));
       } catch (error) {
-        console.log(error);
+        console.error(error);
       } finally {
         setSubmitting(false);
       }
@@ -50,7 +50,6 @@ const ContactSectionAuth = ({
       temporaryData.phone &&
       temporaryData.prefixphone
     ) {
-      console.log('terjadi');
       formik.setValues(temporaryData);
     }
   }, []);

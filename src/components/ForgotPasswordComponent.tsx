@@ -60,7 +60,6 @@ const ForgotPasswordComponent = () => {
           email: values.email,
         }
       );
-      console.log(data);
       if (!data.success) {
         toast.error(data.errors);
         return;
@@ -71,7 +70,7 @@ const ForgotPasswordComponent = () => {
         setCurrentPage('success');
       }, 2000);
     } catch (error) {
-      console.log(error);
+      console.error(error);
     } finally {
       setSubmitting(false);
     }
@@ -83,7 +82,7 @@ const ForgotPasswordComponent = () => {
       setTemporaryData((prev) => ({ ...prev, ...values }));
       setCurrentPage('email');
     } catch (error) {
-      console.log(error);
+      console.error(error);
     } finally {
       setSubmitting(false);
     }

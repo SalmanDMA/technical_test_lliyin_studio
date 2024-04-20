@@ -47,7 +47,7 @@ const SignInComponent = () => {
       setCurrentPage('password');
       setTemporaryData((prev: ITemporaryDataStateSignIn) => ({ ...prev, ...values }));
     } catch (error) {
-      console.log(error);
+      console.error(error);
     } finally {
       setSubmitting(false);
     }
@@ -87,7 +87,7 @@ const SignInComponent = () => {
         router.push('/');
       }, 2000);
     } catch (error) {
-      console.log(error);
+      console.error(error);
     } finally {
       setSubmitting(false);
     }

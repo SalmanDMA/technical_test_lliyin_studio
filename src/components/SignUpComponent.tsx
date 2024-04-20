@@ -56,7 +56,7 @@ const SignUpComponent = () => {
       setCurrentPage('contact');
       setTemporaryData((prev: ITemporaryDataStateSignUp) => ({ ...prev, ...values }));
     } catch (error) {
-      console.log(error);
+      console.error(error);
     } finally {
       setSubmitting(false);
     }
@@ -68,7 +68,7 @@ const SignUpComponent = () => {
       setCurrentPage('success');
       setTemporaryData((prev: ITemporaryDataStateSignUp) => ({ ...prev, ...values }));
     } catch (error) {
-      console.log(error);
+      console.error(error);
     } finally {
       setSubmitting(false);
     }
