@@ -1,0 +1,477 @@
+@import './custom.scss';
+
+.main_container {
+  padding-top: calc(115px + 24px);
+  padding-left: calc(236px + 24px);
+  padding-right: 24px;
+  padding-bottom: 24px;
+  background-color: $bg-input;
+
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    .title {
+      font-size: 28px;
+      font-weight: 600;
+      line-height: 33.6px;
+      color: $text-dark;
+      margin: 0px;
+    }
+
+    .button {
+      font-size: 12px;
+      font-weight: 600;
+      line-height: 20px;
+      color: $text-dark-light;
+      border: 1.5px solid $border-primary;
+      background-color: $bg-white;
+      transition: all 0.3s;
+      padding: 12px 24px;
+      border-radius: 8px;
+
+      &:hover {
+        background-color: $bg-primary;
+        color: $text-white;
+      }
+    }
+  }
+
+  .card {
+    margin-top: 24px;
+    padding: 24px;
+    background-color: $bg-white;
+    margin-bottom: 58px;
+
+    .navtab {
+      display: flex;
+      overflow-x: auto;
+
+      .navtab_button {
+        background-color: transparent;
+        border: none;
+        padding: 12px 34px;
+        transition: all 0.3s ease-in-out;
+        position: relative;
+        display: flex;
+        gap: 8px;
+
+        &:not(.active):hover {
+          font-weight: 600;
+          color: $text-white;
+          background-color: $bg-primary;
+
+          .bandage {
+            background-color: $bg-white;
+            color: $text-primary;
+          }
+        }
+
+        &.active {
+          color: $text-secondary;
+          font-weight: 600;
+
+          &::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            height: 2px;
+            background-color: $border-primary;
+            animation: active 0.3s ease-in-out forwards;
+          }
+
+          @keyframes active {
+            from {
+              width: 0;
+            }
+            to {
+              width: 100%;
+            }
+          }
+        }
+
+        .title {
+          font-size: 14px;
+          font-weight: 400;
+          line-height: 22px;
+          color: $text-secondary;
+          margin: 0px;
+          width: 140px;
+        }
+
+        .bandage {
+          font-size: 12px;
+          font-weight: 600;
+          line-height: 13.2px;
+          background-color: $bg-primary;
+          color: $text-white;
+          padding: 4px 9px;
+          margin: 0px;
+          border-radius: 50%;
+        }
+      }
+
+      .navtab_button_hidden {
+        display: none;
+      }
+    }
+
+    .table_container {
+      width: 100%;
+      overflow-x: auto;
+
+      .table {
+        width: 100%;
+
+        .table_row {
+          &:is(:first-child) {
+            border-top: 1px solid $border-sidebar;
+          }
+
+          &:not(:last-child) {
+            border-bottom: 1px solid $border-sidebar;
+          }
+
+          &:is(:last-child) {
+            border-bottom: 1px solid $border-sidebar;
+          }
+
+          .table_data {
+            padding: 24px;
+
+            .card_info {
+              display: flex;
+              gap: 16px;
+              align-items: center;
+
+              .image_wrapper {
+                width: 48px;
+                height: 48px;
+
+                .image {
+                  width: 100%;
+                  height: 100%;
+                  border-radius: 8px;
+                }
+              }
+
+              .text_wrapper {
+                display: flex;
+                flex-direction: column;
+                gap: 8px;
+                width: 340px;
+
+                .title {
+                  font-size: 22px;
+                  font-weight: 600;
+                  line-height: 26.4px;
+                  color: $text-dark-light;
+                  margin: 0px;
+                }
+
+                .text_inner {
+                  display: flex;
+                  gap: 29px;
+                  align-items: center;
+
+                  .paragraph {
+                    font-size: 14px;
+                    font-weight: 400;
+                    line-height: 22px;
+                    color: $text-grey;
+                    margin: 0px;
+                    display: flex;
+                    gap: 12px;
+
+                    .icon {
+                      font-size: 20px;
+                      display: flex;
+                      align-items: center;
+                      justify-content: center;
+                      color: $text-grey;
+                    }
+                  }
+                }
+              }
+            }
+
+            .card_date {
+              display: flex;
+              gap: 16px;
+
+              .date {
+                font-size: 16px;
+                font-weight: 500;
+                line-height: 24px;
+                color: $text-dark-light;
+                margin: 0px;
+                width: 110px;
+                text-align: center;
+              }
+
+              .date_inner {
+                display: flex;
+                flex-direction: column;
+                gap: 12px;
+                width: 190px;
+
+                .paragraph {
+                  font-size: 14px;
+                  font-weight: 400;
+                  line-height: 22px;
+                  color: $text-grey;
+                  margin: 0px;
+                  display: flex;
+                  gap: 12px;
+
+                  .icon {
+                    font-size: 20px;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    color: $text-grey;
+                  }
+                }
+              }
+            }
+
+            .card_calendar {
+              display: flex;
+              gap: 16px;
+
+              .calendar {
+                display: flex;
+                flex-direction: column;
+                gap: 2px;
+                width: 166px;
+
+                .text {
+                  font-size: 14px;
+                  font-weight: 500;
+                  line-height: 22px;
+                  color: $text-grey;
+                  margin: 0px;
+                }
+
+                .paragraph {
+                  font-size: 14px;
+                  font-weight: 400;
+                  line-height: 22px;
+                  color: $text-grey;
+                  margin: 0px;
+                  display: flex;
+                  gap: 12px;
+
+                  .icon {
+                    font-size: 20px;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    color: $text-grey;
+                  }
+                }
+              }
+            }
+
+            .card_price_action {
+              display: flex;
+              align-items: flex-start;
+              gap: 16px;
+              padding-bottom: 30px;
+
+              .card_price {
+                width: 190px;
+
+                .price {
+                  font-size: 18px;
+                  font-weight: 600;
+                  line-height: 26px;
+                  color: $text-dark;
+                  margin: 0;
+                  text-align: center;
+                }
+              }
+
+              .card_action {
+                width: 100px;
+
+                .button {
+                  font-size: 16px;
+                  font-weight: 600;
+                  line-height: 24px;
+                  color: $text-primary;
+                  background-color: transparent;
+                  border: none;
+                  width: 100%;
+                }
+              }
+            }
+
+            .card_status_action {
+              display: flex;
+              align-items: flex-start;
+              gap: 16px;
+
+              .card_status {
+                display: flex;
+                flex-direction: column;
+                gap: 4px;
+                width: 166px;
+
+                .status {
+                  font-size: 14px;
+                  font-weight: 500;
+                  line-height: 22px;
+                  color: $text-grey;
+                  margin: 0px;
+                }
+
+                .badge {
+                  padding: 3px 16px;
+                  border-radius: 32px;
+                  background-color: $bg-success;
+                  font-size: 14px;
+                  font-weight: 500;
+                  line-height: 22px;
+                  color: $text-white;
+                  margin: 0px;
+                  max-width: max-content;
+                }
+              }
+
+              .card_action {
+                width: 130px;
+
+                .button {
+                  font-size: 16px;
+                  font-weight: 600;
+                  line-height: 24px;
+                  color: $text-primary;
+                  background-color: transparent;
+                  border: none;
+                  width: 100%;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  @media screen and (max-width: 768px) {
+    & {
+      padding-left: 24px;
+    }
+  }
+
+  @media screen and (max-width: 425px) {
+    & {
+      padding-top: calc(86px + 24px);
+
+      .header {
+        flex-wrap: wrap;
+        gap: 16px;
+        justify-content: center;
+        align-items: center;
+
+        .title {
+          text-align: center;
+          font-size: 24px;
+        }
+
+        .button {
+          width: 90%;
+        }
+      }
+
+      .card {
+        margin-bottom: 24px;
+
+        .navtab {
+          .navtab_button {
+            padding: 12px 20px;
+          }
+        }
+
+        .table_container {
+          .table {
+            .table_row {
+              .table_data {
+                .card_info {
+                  .text_wrapper {
+                    .title {
+                      font-size: 16px;
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.main_construction {
+  padding-top: calc(86px + 24px);
+  padding-left: calc(236px + 24px);
+  padding-right: 24px;
+  padding-bottom: 24px;
+  background-color: $bg-input;
+
+  .card_construction {
+    display: flex;
+    gap: 24px;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    padding: 20px;
+    background-color: $bg-white;
+
+    .image {
+      width: 100%;
+      max-width: 400px;
+      height: 100%;
+      max-height: 400px;
+    }
+
+    .title {
+      font-size: 32px;
+      font-weight: 600;
+      line-height: 33.6px;
+      color: $text-dark;
+      margin: 0px;
+      text-align: center;
+    }
+
+    .paragraph {
+      font-size: 20px;
+      font-weight: 400;
+      line-height: 24px;
+      color: $text-grey;
+      text-align: center;
+      margin: 0;
+    }
+
+    @media screen and (max-width: 425px) {
+      & {
+        .image {
+          max-width: 300px;
+          max-height: 300px;
+        }
+      }
+    }
+  }
+
+  @media screen and (max-width: 768px) {
+    & {
+      padding-left: 24px;
+    }
+  }
+}
